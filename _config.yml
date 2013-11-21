@@ -3,3 +3,6 @@ markdown: redcarpet
 pygments: true
 exclude: ["vendor"]
 
+# Google Analytics Setup
+UACode : UA-10055221-10
+TopDomainName: paulshi.me
