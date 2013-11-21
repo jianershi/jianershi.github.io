@@ -1,0 +1,40 @@
+---
+layout: post
+title:  "IP Look"
+date:   2013-11-21 01:18:00
+categories: technical
+---
+
+[![logo](https://raw.github.com/paulshi/iplookup/master/logo.png)](https://iplook.herokuapp.com)
+
+I spend a lot of time working in different places/coffee shops/random places/etc, so it becomes a normal habit to connect to VPN. After VPN is connected, I usually verify the IP address to make sure that I am indeed connected to my private network. Checking what network provider those coffee shops uses also turns out to be an interesting expedition.
+
+And all the ip checking services I googled looked terrible. So "can't bear it anymore"+"i think i can build this" resulted in the early version of this frontend.
+
+I am a strong believer of [D.R.Y.](http://en.wikipedia.org/wiki/Don't_repeat_yourself) mostly because I am pretty lazy. I am glad to find a free [IP Geolocation Library](http://ip-api.com/docs/) which returns [JSON](http://www.json.org/). All I need to do is throw in some front-end. Well, since I was not a designer of any kind and almost never coded any front-end before, I used [Bootstrap](http://getbootstrap.com/) for templating. That was pretty much it for the original project, basically using python print to pretty print out JSON response from the API provider and wrap it into a ```<pre>``` block inside Bootstrap to make it looks nice.
+
+I played around with the [Mapbox](https://www.mapbox.com/) for a while last week and thought it will be fun to try using a map. But I like the simplicity of the original design and probably wouldn't have added a map if not for a meet-up I missed earlier this week: [Cross-Device Responsive Web Development with Tomomi Imura](http://www.meetup.com/sfhtml5/events/132166632). I highly recommend Tomomi Imura( [@girlie_mac](https://twitter.com/girlie_mac) )'s slides [here](http://girliemac.github.io/presentation-slides/html5-mobile-approach/rwd.html). Tomomi's slides taught me media query in css3 which allowed me to only include the map in the desktop but kept the simplest version in the mobile version.
+
+After removing ```pretty.css``` and ```pretty.js``` and replaced the styling of text with 紅(kurenai) from [Nippon Colors](http://nipponcolors.com/#kurenai) (which I really like btw), I published this version on [Hacker News](https://news.ycombinator.com/item?id=6759220).
+
+It was a complete surprise that it went on to the front page. It also became the top 10 trending [Github](https://github.com/paulshi/iplookup) of the day largely due the the huge traffic coming from HN.
+
+I was very inspired by so many people staring the project on Github and since updated the following items:
+
+1. Add a logo
+2. [Read The Doc Documentation](http://iplookup.readthedocs.org/)
+3. Completely removed Mapbox and replaced with Google Maps
+4. Styling the google maps
+5. Select a good [SVG](http://en.wikipedia.org/wiki/Scalable_Vector_Graphics) map marker 
+
+It turned out I blew past the Mapbox limit by a wide margin -  56.3k map views, this forced me to switch to Google API v3, which doesn't seem to require an API key.
+
+Re-styling Google Map was the challenging part. Mapbox was my first choice because I really liked the color selection. But it turned out not to be that difficult to do with Google Maps. I used this tool [Google Maps Colorizr](http://software.stadtwerk.org/google_maps_colorizr/) to do the map tile styling. The effect turns out to be much much better than I expected. 
+
+The default map marker looks terrible. A brief look at the API documentation only mentions png file as a replacement marker. But through some guess work and googling I found out SVG files works as well! XD. Thanks to the piece designed by [Kelly Walker](http://thenounproject.com/kellylesliewalker/) at [the Noun Project](http://thenounproject.com/).
+
+That's pretty much the engineering story behind this simple front end.
+
+I was confident to tag it 1.0 on Github and please enjoy.
+
+[https://iplook.herokuapp.com](https://iplook.herokuapp.com)
