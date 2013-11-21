@@ -1,4 +1,4 @@
-name: Paul Shi's Blog
+name: Paul Shi's Technical Blog
 markdown: redcarpet
 pygments: true
 exclude: ["vendor"]
