@@ -37,4 +37,7 @@ That's pretty much the engineering story behind this simple front end.
 
 I was confident to tag it 1.0 on Github and please enjoy.
 
-[https://iplook.herokuapp.com](https://iplook.herokuapp.com)
+---
+
+**UPDATE** (11/26/2013) Faster implementation using AJAX:
+##[iplook.co](http://iplook.co)
