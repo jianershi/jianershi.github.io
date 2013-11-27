@@ -5,7 +5,7 @@ date:   2013-11-21 01:18:00
 categories: technical
 ---
 
-[![logo](https://raw.github.com/paulshi/iplookup/master/logo.png)](https://iplook.herokuapp.com)
+![logo](https://raw.github.com/paulshi/iplookup/master/logo.png)
 
 I spend a lot of time working in different places/coffee shops/random places/etc, so it becomes a normal habit to connect to VPN. After VPN is connected, I usually verify the IP address to make sure that I am indeed connected to my private network. Checking what network provider those coffee shops uses also turns out to be an interesting expedition.
 
