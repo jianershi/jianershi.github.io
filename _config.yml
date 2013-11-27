@@ -1,8 +1,45 @@
-name: Paul Shi's Technical Blog
-markdown: redcarpet
+# visit https://github.com/mojombo/jekyll/wiki/Configuration for more settings
+
+paginate: 10 # pagination based on number of posts
+paginate_path: "page:num"
+exclude: ["README.md","vendor"] # files to exclude
 pygments: true
-exclude: ["vendor"]
+
+title: (Paul) Jianer Shi
+description: Technical Blog
+author:
+  name: Jianer Shi
+  email: 
+  github: paulshi
+  twitter: hipaulshi
+  pinterest: 
+  linkedin: paulshi
+  resume: 
+  bio: Co-Founder/CEO of Jarvis
+  email_md5: 26a2d02448bdbf8a8db7b947545627d3
+
+rss_path: 
+categories_path: categories.html
+tags_path: tags.html
+
+BASE_PATH:
 
 # Google Analytics Setup
 UACode : UA-10055221-10
-TopDomainName: paulshi.me
+
+
+# All links will be namespaced by BASE_PATH if defined.
+# Links in your website should always be prefixed with {{ site.BASE_PATH }}
+# Do not put a "/" at the end of the url.
+#
+# CNAME (http://yourcustomdomain.com)
+#   DO NOT SET BASE_PATH JUST LEAVE IT BLANK 
+#   (urls will be prefixed with "/" and work relatively)
+#
+# GitHub Pages (http://username.github.io)
+#   DO NOT SET BASE_PATH JUST LEAVE IT BLANK 
+#   (urls will be prefixed with "/" and work relatively)
+#
+# GitHub Project Pages (http://username.github.io/project-name)
+  #  A GitHub Project site exists in the `gh-pages` branch of one of your repositories.
+  #  REQUIRED! Set BASE_PATH to "http://username.github.io/project-name"
