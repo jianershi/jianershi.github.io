@@ -4,6 +4,7 @@ paginate: 10 # pagination based on number of posts
 paginate_path: "page:num"
 exclude: ["README.md","vendor"] # files to exclude
 pygments: true
+site: safe
 
 title: (Paul) Jianer Shi
 description: Technical Blog
