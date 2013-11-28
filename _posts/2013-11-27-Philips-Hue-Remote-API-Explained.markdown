@@ -5,7 +5,7 @@ date:   2013-11-27 03:24:00
 categories: technical
 ---
 
-This post is a response to Stackoverflow question [How to connect backend service with philips hue bridge remotely?](http://stackoverflow.com/posts/20233705/) I realized very late the I don't have enough reputation to post so many links. So it is explained here.
+This post is a response to Stackoverflow question [How to connect backend service with philips hue bridge remotely?](http://stackoverflow.com/questions/19900657/how-to-connect-backend-service-with-philips-hue-bridge-remotely) I realized very late the I don't have enough reputation to post so many links. So it is explained here.
 
 The question actually comes as two part:
 
