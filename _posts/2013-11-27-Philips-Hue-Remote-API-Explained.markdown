@@ -14,21 +14,25 @@ The question actually comes as two part:
 
 ##Authentication
 
-I haven't figure out how to do that automatically. Right now I have to do this:
+I haven't figure out how to do authentication automatically remotely. Right now you have to do this: The idea is to fake as official iOS APP which has the ability to control remotely when enabled. We will need to get `BRIDGEID` and `ACCESSTOKEN` to pass the authentication step for remote control.
 
-1. Find your Bridge ID from [https://www.meethue.com/api/nupnp](https://www.meethue.com/api/nupnp)
+1. Find your `BRIDGEID` from [https://www.meethue.com/api/nupnp](https://www.meethue.com/api/nupnp). (or in [My bridge](https://www.meethue.com/en-US/user/preferencessmartbridge) page on the meethue website and by clicking on "Show me more")
 
-2. Get access token
+2. Get `ACCESSTOKEN`
 
 		www.meethue.com/en-US/api/gettoken?devicename=iPhone+5&appid=hueapp&deviceid=**BRIDGEID**
 
-3. Right Click on `BACK TO THE APP` and write down `phhueapp://sdk/login/**ACCESSTOKEN**`
+3. **Right** click on "BACK TO THE APP" and write down `ACCESSTOKEN` inside the link it redirect to
 
-Basically it is a hack to get your access token. You fake your app as the official iOS Hue App, and ask for access token that way. I am not sure how to do this automatically. I tried with iFrame but this result in cross-domain iFrame in which I cannot really monitor the ACCESSTOKEN because of security block by browser vendors.
+		phhueapp://sdk/login/**ACCESSTOKEN**
+
+Basically it is a hack to get your access token. You fake your app as the official iOS Hue App, and ask for access token that way. I am not sure there is an easier way out there, if you do know one, please do comment below. 
+
+The process can't be automated mainly because of step 3. I tried with embedded iframe in order to get the link contains the `ACCESSTOKEN`,  but this resulted in cross-domain iframe attack which is blocked by most browser venders. I am sure if you ask the meethue username and password directly from the user you probably can do a simulated login on your backend.
 
 ##Remote Control
 
-Once authentication is done, this part can be done automatically. There are several known private endpoints for sending control command and getting all the status of the philips hue bridge. 
+Once authentication is done, this part can be done automatically. There are 2 known private endpoints for sending control command and getting all the status related to the hue bridge. 
 
 * Sending Command Endpoint:
 
@@ -58,12 +62,12 @@ with the body
 
 ###Limitations
 
-Current limitation is you cannot immediately know from the response whether your control command succeeded like the official API. All the response you get from calling the Sending Command Endpoint is pretty much always `<200>` if you are doing it correctly. But you can always pull all the status from the Getting Status Endpoint
+Current limitation is you cannot immediately know from the response whether your control command succeeded like the official API. All the response you get from calling the Sending Command Endpoint is pretty much always `<200>` if you are doing it correctly. But you can always pull all the status related to the huge bridge from the Getting Status Endpoint
 
 
 ###Remote Control API
 
-I wrote [Philips HUE Remote API](https://github.com/jarvisinc/PhilipsHueRemoteAPI) to specifically solve the remote control problem. So peace~~ :)
+I wrote [Philips HUE Remote API](https://github.com/jarvisinc/PhilipsHueRemoteAPI) to specifically solve the remote control problem. Enjoy :)
 
 
 ##Paper
