@@ -5,7 +5,7 @@ date:   2013-12-05 19:07:00
 categories: technical
 ---
 
-This project was inspired by [f.lux](http://justgetflux.com/). It adjusts your screen temperature to match the color of the sun so your bright screen doesn't hurt your eyes. I really like f.lux, and since I was working on [Philips Hue Remote API](http://blog.paulshi.me/technical/2013/11/27/Philips-Hue-Remote-API-Explained.html), I thought I can create a Philips Hue version as well. I set some basic requirements for it:
+[Philips Hue Color Adaptive Sunlight](https://github.com/paulshi/PhilipsHueColorAdaptiveSunlight) project was inspired by [f.lux](http://justgetflux.com/). It adjusts your screen temperature to match the color of the sun so your bright screen doesn't hurt your eyes. I really like f.lux, and since I was working on [Philips Hue Remote API](http://blog.paulshi.me/technical/2013/11/27/Philips-Hue-Remote-API-Explained.html), I thought I can create a Philips Hue version as well. I set some basic requirements for it:
 
 1. It needs to automatically adjust the color temperature unmonitored
 2. It needs to get sunrise / sunset info everyday
