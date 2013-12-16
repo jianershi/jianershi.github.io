@@ -57,17 +57,19 @@ with the body
 
 * `BRIDGEID` is the same one you obtained earlier
 * `APIENDPOINT` the same as official API `/api/<username>/***` by removing `/api/<usename>/` part
-* `METHOD` PUT/GET/POST/DELETE the same 4 method as official API. Despite GET really doesn't work since all response from the Sending Command Endpoint is 200 explained in the following part, while delete is not tested
+* `METHOD` PUT/GET/POST/DELETE the same 4 method as official API. Despite GET really doesn't work since all response from the Sending Command Endpoint is 200 explained in the following part, while DELETE is not tested
 * `JSONCOMMAND` The actual command body for example `{"on":true}`
 
 ###Limitations
 
-Current limitation is you cannot immediately know from the response whether your control command succeeded like the official API. All the response you get from calling the Sending Command Endpoint is pretty much always `<200>` if you are doing it correctly. But you can always pull all the status related to the huge bridge from the Getting Status Endpoint
+Current limitation is you cannot immediately know from the response whether your control command succeeded like the official API. All the response you get from calling the Sending Command Endpoint is pretty much always `<200>` if you are doing it correctly. But you can always pull all the status related to the Hue bridge from the Getting Status Endpoint.
 
 
 ###Remote Control API
 
-I wrote [Philips HUE Remote API](https://github.com/jarvisinc/PhilipsHueRemoteAPI) to specifically solve the remote control problem. Enjoy :)
+I wrote [Philips HUE Remote API](https://github.com/jarvisinc/PhilipsHueRemoteAPI) to specifically solve the remote control problem.
+
+Enjoy :)
 
 
 ##Paper
