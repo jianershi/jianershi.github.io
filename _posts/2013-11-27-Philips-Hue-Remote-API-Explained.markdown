@@ -36,29 +36,52 @@ Once authentication is done, this part can be done automatically. There are 2 kn
 
 * Sending Command Endpoint:
 
-		GET https://www.meethue.com/en-US/user/sendMessageToBridge
+		POST https://www.meethue.com/en-US/user/sendMessageToBridge
 
 * Getting Status Endpoint:
 
 		GET https://www.meethue.com/api/getbridge
 
-`ACCESSTOKEN` you obtained earlier is needed for the URL Parameter: 
+###Sending Command Endpoint
+
+* URL: `https://www.meethue.com/en-US/user/sendMessageToBridge`
+
+* Method: `POST`
+
+* URL Parameters: 
 	
-	?token=ACCESSTOKEN
+		token=**ACCESSTOKEN** (which you obtained earlier)
 
-with request header
+* Request header
+		
+		content-type=application/x-www-form-urlencoded
+		
+* body
 
-	content-type=application/x-www-form-urlencoded
+		clipmessage={ bridgeId: "**BRIDGEID**", clipCommand: { url: "/api/0/**APIENDPOINT**", method: "**METHOD**", body: **JSONCOMMAND** } }
 
-with the body
+	* `BRIDGEID` is the same one you obtained earlier
+	* `APIENDPOINT` the same as official API `/api/<username>/***` by removing `/api/<usename>/` part
+	* `METHOD` PUT/GET/POST/DELETE the same 4 method as official API. Despite GET really doesn't work since all response from the Sending Command Endpoint is 200 explained in the following part, while DELETE is not tested
+	* `JSONCOMMAND` The actual command body for example `{"on":true}`
 
-	clipmessage={ bridgeId: "**BRIDGEID**", clipCommand: { url: "/api/0/**APIENDPOINT**", method: "**METHOD**", body: **JSONCOMMAND** } }
+
+###Getting Status Endpoint
+
+* URL: `https://www.meethue.com/api/getbridge`
+
+* Method: `GET`
+	
+* URL Parameters: 
+	
+		token=**ACCESSTOKEN**
+		bridgeid=**BRIDGEID**
+
+* Request header
+		
+		content-type=application/x-www-form-urlencoded
 
 
-* `BRIDGEID` is the same one you obtained earlier
-* `APIENDPOINT` the same as official API `/api/<username>/***` by removing `/api/<usename>/` part
-* `METHOD` PUT/GET/POST/DELETE the same 4 method as official API. Despite GET really doesn't work since all response from the Sending Command Endpoint is 200 explained in the following part, while DELETE is not tested
-* `JSONCOMMAND` The actual command body for example `{"on":true}`
 
 ###Limitations
 
