@@ -14,7 +14,7 @@ The question actually comes as two part:
 
 ##Authentication
 
-I haven't figure out how to do authentication automatically remotely. Right now you have to do this: The idea is to fake as official iOS APP which has the ability to control remotely when enabled. We will need to get `BRIDGEID` and `ACCESSTOKEN` to pass the authentication step for remote control.
+I haven't figure out a reliable way to do authentication automatically. The following procedures needs to be automated: The idea is to fake as official iOS APP which has the ability to control remotely when enabled. We will need to get `BRIDGEID` and `ACCESSTOKEN` to pass the authentication step for remote control.
 
 1. Find your `BRIDGEID` from [https://www.meethue.com/api/nupnp](https://www.meethue.com/api/nupnp). (or in [My bridge](https://www.meethue.com/en-US/user/preferencessmartbridge) page on the meethue website and by clicking on "Show me more")
 
@@ -28,7 +28,9 @@ I haven't figure out how to do authentication automatically remotely. Right now 
 
 Basically it is a hack to get your access token. You fake your app as the official iOS Hue App, and ask for access token that way. I am not sure there is an easier way out there, if you do know one, please do comment below. 
 
-The process can't be automated mainly because of step 3. I tried with embedded iframe in order to get the link contains the `ACCESSTOKEN`,  but this resulted in cross-domain iframe attack which is blocked by most browser venders. I am sure if you ask the meethue username and password directly from the user you probably can do a simulated login on your backend.
+You can potentially automate it by doing simulated log-in session and grab the the `ACCESSTOKEN` by scraping the page content. But I consider it highly unreliable because any change to the official page will likely break it.
+
+Currently, this OAUTH process only works with official apps. There might be a slight chance that they will open it to other 3rd party apps.
 
 ##Remote Control
 
