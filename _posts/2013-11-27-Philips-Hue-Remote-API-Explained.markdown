@@ -5,7 +5,7 @@ date:   2013-11-27 03:24:00
 categories: technical
 ---
 
-This post is a response to Stackoverflow question [How to connect backend service with philips hue bridge remotely?](http://stackoverflow.com/questions/19900657/how-to-connect-backend-service-with-philips-hue-bridge-remotely) I realized very late the I don't have enough reputation to post so many links. So it is explained here.
+This post is a response to Stackoverflow question [How to connect backend service with philips hue bridge remotely?](http://stackoverflow.com/questions/19900657/how-to-connect-backend-service-with-philips-hue-bridge-remotely) I realized later that I don't have enough reputation to post so many links. So it is explained here.
 
 The question actually comes as two part:
 
@@ -28,7 +28,9 @@ I haven't figure out a reliable way to do authentication automatically. The foll
 
 Basically it is a hack to get your access token. You fake your app as the official iOS Hue App, and ask for access token that way. I am not sure there is an easier way out there, if you do know one, please do comment below. 
 
-You can potentially automate it by doing simulated log-in session and grab the the `ACCESSTOKEN` by scraping the page content. But I consider it highly unreliable because any change to the official page will likely break it.
+You can potentially automate it by doing simulated log-in session and grab the the `ACCESSTOKEN` by scraping the page content. But I consider it highly unreliable because any change to the official page will likely break it. 
+
+I wrote this [script](https://github.com/jarvisinc/PhilipsHueRemoteAPI/blob/master/getToken.py) that allows the automation of getting `ACCESSTOKEN` as of today, but I don't guarantee it will work tomorrow for the reason I explained above :P
 
 Currently, this OAUTH process only works with official apps. There might be a slight chance that they will open it to other 3rd party apps.
 
