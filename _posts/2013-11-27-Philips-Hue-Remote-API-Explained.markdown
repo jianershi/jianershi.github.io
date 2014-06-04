@@ -40,7 +40,7 @@ Once authentication is done, this part can be done automatically. There are 2 kn
 
 * Sending Command Endpoint:
 
-		POST https://www.meethue.com/en-US/user/sendMessageToBridge
+		POST https://www.meethue.com/api/sendmessage
 
 * Getting Status Endpoint:
 
@@ -48,7 +48,7 @@ Once authentication is done, this part can be done automatically. There are 2 kn
 
 ###Sending Command Endpoint
 
-* URL: `https://www.meethue.com/en-US/user/sendMessageToBridge`
+* URL: `https://www.meethue.com/api/sendmessage`
 
 * Method: `POST`
 
