@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Philips Hue Color Adaptive Sunlight"
-date:   2013-12-05 19:07:00
+date:   2013-12-05 19:07:00 -08:00
 categories: technical
 ---
 

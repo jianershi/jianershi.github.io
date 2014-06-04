@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Philips Hue Remote API Explained"
-date:   2013-11-27 03:24:00
+date:   2013-11-27 03:24:00 -08:00
 categories: technical
 ---
 
