@@ -5,6 +5,7 @@ paginate_path: "page:num"
 exclude: ["README.md","vendor"] # files to exclude
 highlighter: pygments
 site: safe
+markdown: kramdown
 
 title: (Paul) Jianer Shi
 description: Technical Blog
